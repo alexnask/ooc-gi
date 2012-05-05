@@ -60,7 +60,9 @@ BaseInfo: cover from GIBaseInfo* {
     isUnionInfo?: extern(GI_IS_UNION_INFO) func -> Bool
     isConstantInfo?: extern(GI_IS_CONSTANT_INFO) func -> Bool
     isEnumInfo?: extern(GI_IS_EUNUM_INFO) func -> Bool
-    isValuInfo?: extern(GI_IS_VALUE_INFO) func -> Bool
+    isValueInfo?: extern(GI_IS_VALUE_INFO) func -> Bool
+    isInterfaceInfo?: extern(GI_IS_INTERFACE_INFO) func -> Bool
+    isObjectInfo?: extern(GI_IS_OBJECT_INFO) func -> Bool
 }
 
 operator == (l,r: BaseInfo) -> Bool {
