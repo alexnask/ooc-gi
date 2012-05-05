@@ -1,0 +1,8 @@
+Name: gobject-introspection
+Version: vcs
+Origin: git://github.com/shamanas/ooc-gi.git
+Description: GObject Introspection
+Pkgs: gobject-introspection-1.0
+Includes: gobject-introspection-1.0/girepository.h
+Requires: gtk
+SourcePath: source
