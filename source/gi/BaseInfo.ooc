@@ -46,6 +46,10 @@ BaseInfo: cover from GIBaseInfo* {
     getContainer: extern(g_base_info_get_container) func -> This
     getTypeLib: extern(g_base_info_get_typelib) func -> TypeLib
     equals?: extern(g_base_info_equal) func(other: This) -> Bool
+
+    isCallableInfo?: extern(GI_IS_CALLABLE_INFO) func -> Bool
+    isArgInfo?: extern(GI_IS_ARG_INFO) func -> Bool
+    isTypeInfo?: extern(GI_IS_TYPE_INFO) func -> Bool
 }
 
 operator == (l,r: BaseInfo) -> Bool {

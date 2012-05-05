@@ -18,11 +18,11 @@ Repository: cover from GIRepository* extends _GObject {
     prependSearchPath: static extern(g_irepository_prepend_search_path) func(directory: CString)
     //getSearchPath: static extern(g_irepository_get_search_path) func -> GSList
     
-    loadTypeLib: extern(g_irepository_load_typelib) func(typelib: TypeLib, flags: RepositoryLoadFlags, error: GError**) -> CString
+    loadTypeLib: extern(g_irepository_load_typelib) func(typelib: TypeLib, flags: RepositoryLoadFlags, error: Error**) -> CString
     registered?: extern(g_irepository_is_registered) func(namespace, version: CString) -> Bool
     findByName: extern(g_irepository_find_by_name) func(namespace, version: CString) -> BaseInfo
-    require: extern(g_irepository_require) func(namespace, version: CString, flags: RepositoryLoadFlags, error: GError**) -> TypeLib
-    requirePrivate: extern(g_irepository_require_private) func(typeLibDir, namespace, version: CString, flags: RepositoryLoadFlags, error: GError**) -> TypeLib
+    require: extern(g_irepository_require) func(namespace, version: CString, flags: RepositoryLoadFlags, error: Error**) -> TypeLib
+    requirePrivate: extern(g_irepository_require_private) func(typeLibDir, namespace, version: CString, flags: RepositoryLoadFlags, error: Error**) -> TypeLib
     getDependecies: extern(g_irepository_get_dependencies) func(namespace: CString) -> CString[]
     getLoadedNamespaces: extern(g_irepository_get_loaded_namespaces) func -> CString[]
     //findByGType: extern(g_irepository_find_by_gtype) func(gtype: GType) -> BaseInfo
@@ -34,15 +34,15 @@ Repository: cover from GIRepository* extends _GObject {
     getVersion: extern(g_irepository_get_version) func(namespace: CString) -> CString
     //getOptionGroup: static extern(g_irepository_get_option_group) func -> OptionGroup
     getCPrefix: extern(g_irepository_get_c_prefix) func(namespace: CString) -> CString
-    dump: static extern(g_irepository_dump) func(arg: CString, error: GError*) -> Bool
+    dump: static extern(g_irepository_dump) func(arg: CString, error: Error*) -> Bool
     //enumerateVersions: extern(g_irepository_enumerate_versions) func(namespace: CString) -> GList
     error: static extern(G_IREPOSITORY_ERROR) func -> Quark
 }
 
-TypeLib: cover from GITypeLib* {
-    new: static extern(g_typelib_new_from_memory) func~fromMemory(memory: UInt8*, len: UInt, error: GError**) -> This
-    new: static extern(g_typelib_new_from_const_memory) func~fromConstMemory(memory: const UInt8*, len: UInt, error: GError**) -> This
-    //new: static extern(g_typelib_new_from_mapped_file) func~fromMappedFile(mfile: MappedFile, error: GError*) -> This
+TypeLib: cover from GITypelib* {
+    new: static extern(g_typelib_new_from_memory) func~fromMemory(memory: UInt8*, len: UInt, error: Error**) -> This
+    new: static extern(g_typelib_new_from_const_memory) func~fromConstMemory(memory: const UInt8*, len: UInt, error: Error**) -> This
+    //new: static extern(g_typelib_new_from_mapped_file) func~fromMappedFile(mfile: MappedFile, error: Error*) -> This
     free: extern(g_typelib_free) func
     symbol: extern(g_typelib_symbol) func~pointer(name: CString, _symbol: Pointer) -> Bool
     symbol: func~returnsTuple(name: CString) -> (Pointer, Bool) {
