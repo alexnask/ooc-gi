@@ -50,6 +50,10 @@ BaseInfo: cover from GIBaseInfo* {
     isCallableInfo?: extern(GI_IS_CALLABLE_INFO) func -> Bool
     isArgInfo?: extern(GI_IS_ARG_INFO) func -> Bool
     isTypeInfo?: extern(GI_IS_TYPE_INFO) func -> Bool
+    isFunctionInfo?: extern(GI_IS_FUNCTION_INFO) func -> Bool
+    isPropertyInfo?: extern(GI_IS_PROPERTY_INFO) func -> Bool
+    isVFuncInfo?: extern(GI_IS_VFUNC_INFO) func -> Bool
+    isSignalInfo?: extern(GI_IS_SIGNAL_INFO) func -> Bool
 }
 
 operator == (l,r: BaseInfo) -> Bool {
