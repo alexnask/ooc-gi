@@ -25,13 +25,7 @@ InfoType: extern(GIInfoType) enum {
     toString: extern(g_info_type_to_string) func -> CString
 }
 
-AttributeIterator: cover from GIAttributeIter* {
-    new: static func -> This {
-        this: This
-        // Hack to get the first member of the iter to be null; Required to be passed  to `BaseInfo iterateAttributes`
-        (this as Pointer[])[0] = null
-    }
-}
+AttributeIter: cover from GIAttributeIter
 
 BaseInfo: cover from GIBaseInfo* {
     ref: extern(g_base_info_ref) func -> This
@@ -41,11 +35,11 @@ BaseInfo: cover from GIBaseInfo* {
     getNamespace: extern(g_base_info_get_namespace) func -> CString
     deprecated?: extern(g_base_info_is_deprecated) func -> Bool
     getAttribute: extern(g_base_info_get_attribute) func(name: CString) -> CString
-    iterateAttributes: extern(g_base_info_iterate_attributes) func(iter: AttributeIterator, name: CString*, value: CString*) -> Bool
+    iterateAttributes: extern(g_base_info_iterate_attributes) func(iter: AttributeIter*, name: CString*, value: CString*) -> Bool
     eachAttribute: func(f: Func(CString, CString)) {
         name, value: CString
-        iter := AttributeIterator new()
-        while(iterateAttributes(iter, name&, value&)) {
+        iter := (null, null) as AttributeIter
+        while(iterateAttributes(iter&, name&, value&)) {
             f(name, value)
         }
     }
