@@ -18,7 +18,7 @@ FunctionInfoFlags: extern(GIFunctionInfoFlags) enum {
 
 FunctionInfo: cover from GIFunctionInfo* extends CallableInfo {
     getSymbol: extern(g_function_info_get_symbol) func -> CString
-    getFlags: extern(g_function_get_flags) func -> FunctionInfoFlags
-    getProperty: extern(g_function_get_property) func -> PropertyInfo
-    getVFunc: extern(g_function_get_vfunv) func -> VFuncInfo
+    getFlags: extern(g_function_info_get_flags) func -> FunctionInfoFlags
+    getProperty: extern(g_function_info_get_property) func -> PropertyInfo
+    getVFunc: extern(g_function_info_get_vfunv) func -> VFuncInfo
 }
