@@ -2,7 +2,7 @@ use gi
 import gi/[CallableInfo, VFuncInfo]
 
 
-SignalFlags: extern(GSignalFlags) eum {
+SignalFlags: extern(GSignalFlags) enum {
     runFirst: extern(G_SIGNAL_RUN_FIRST),
     runLast: extern(G_SIGNAL_RUN_LAST),
     runCleanup: extern(G_SIGNAL_RUN_CLEANUP),

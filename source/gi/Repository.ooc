@@ -20,11 +20,11 @@ Repository: cover from GIRepository* extends _GObject {
     
     loadTypeLib: extern(g_irepository_load_typelib) func(typelib: TypeLib, flags: RepositoryLoadFlags, error: Error**) -> CString
     registered?: extern(g_irepository_is_registered) func(namespace, version: CString) -> Bool
-    findByName: extern(g_irepository_find_by_name) func(namespace, version: CString) -> BaseInfo
+    findByName: extern(g_irepository_find_by_name) func(namespace, name: CString) -> BaseInfo
     require: extern(g_irepository_require) func(namespace, version: CString, flags: RepositoryLoadFlags, error: Error**) -> TypeLib
     requirePrivate: extern(g_irepository_require_private) func(typeLibDir, namespace, version: CString, flags: RepositoryLoadFlags, error: Error**) -> TypeLib
-    getDependecies: extern(g_irepository_get_dependencies) func(namespace: CString) -> CString[]
-    getLoadedNamespaces: extern(g_irepository_get_loaded_namespaces) func -> CString[]
+    getDependencies: extern(g_irepository_get_dependencies) func(namespace: CString) -> CString*
+    getLoadedNamespaces: extern(g_irepository_get_loaded_namespaces) func -> CString*
     //findByGType: extern(g_irepository_find_by_gtype) func(gtype: GType) -> BaseInfo
     getNInfos: extern(g_irepository_get_n_infos) func(namespace: CString) -> Int
     getInfo: extern(g_irepository_get_info) func(namespace: CString, index: Int) -> BaseInfo

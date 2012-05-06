@@ -11,7 +11,7 @@ InfoType: extern(GIInfoType) enum {
     flags: extern(GI_INFO_TYPE_FLAGS),
     object: extern(GI_INFO_TYPE_OBJECT),
     _interface: extern(GI_INFO_TYPE_INTERFACE),
-    constanct: extern(GI_INFO_TYPE_CONSTANT),
+    constant: extern(GI_INFO_TYPE_CONSTANT),
     invalid_0: extern(GI_INFO_TYPE_INVALID_0),
     union: extern(GI_INFO_TYPE_UNION),
     value: extern(GI_INFO_TYPE_VALUE),

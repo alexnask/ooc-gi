@@ -12,5 +12,5 @@ VFuncInfo: cover from GIVFuncInfo* extends CallableInfo {
     getFlags: extern(g_vfunc_info_get_flags) func -> VFuncInfoFlags
     getOffset: extern(g_vfunc_info_get_offset) func -> Int
     getSignal: extern(g_vfunc_info_get_signal) func -> SignalInfo
-    getInvoker: extern(g_vfunc_get_invoker) -> FunctionInfo
+    getInvoker: extern(g_vfunc_get_invoker) func -> FunctionInfo
 }

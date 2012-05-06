@@ -19,13 +19,13 @@ ObjectInfo: cover from GIObjectInfo* extends RegisteredTypeInfo {
     getNSignals: extern(g_object_info_get_n_signals) func -> Int
     getSignal: extern(g_object_info_get_signal) func(n: Int) -> SignalInfo
     getNVFuncs: extern(g_object_info_get_n_vfuncs) func -> Int
-    getVFunc: extern(g_object_info_get_vfunc) func(n: Int) -> VFunc
+    getVFunc: extern(g_object_info_get_vfunc) func(n: Int) -> VFuncInfo
     getNConstants: extern(g_object_info_get_n_constants) func -> Int
     getConstant: extern(g_object_info_get_constant) func(n: Int) -> ConstantInfo
     getClassStruct: extern(g_object_info_get_class_struct) func -> StructInfo
     findVFunc: extern(g_object_info_find_vfuc) func(name: CString) -> VFuncInfo
-    getUnrefFunction: extern(g_object_info_get_unref_function) -> CString
-    getRefFunction: extern(g_object_info_get_ref_function) -> CString
-    getSetValueFunction: extern(g_object_info_get_set_value_function) -> CString
-    getGetValueFunction: extern(g_object_info_get_get_value_function) -> CString
+    getUnrefFunction: extern(g_object_info_get_unref_function) func -> CString
+    getRefFunction: extern(g_object_info_get_ref_function) func -> CString
+    getSetValueFunction: extern(g_object_info_get_set_value_function) func -> CString
+    getGetValueFunction: extern(g_object_info_get_get_value_function) func -> CString
 }

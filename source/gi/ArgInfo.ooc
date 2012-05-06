@@ -1,7 +1,7 @@
 use gi
 import gi/[BaseInfo, TypeInfo]
 
-Direction: extern(GIDiretion) enum {
+Direction: extern(GIDirection) enum {
     in: extern(GI_DIRECTION_IN),
     out: extern(GI_DIRECTION_OUT),
     inout: extern(GI_DIRECTION_INOUT)
