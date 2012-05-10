@@ -8,6 +8,6 @@ EnumInfo: cover from GIEnumInfo* extends RegisteredTypeInfo {
     getMethod: extern(g_enum_info_get_method) func(n: Int) -> FunctionInfo
 }
 
-ValueInfo: cover from GIValueInfo extends BaseInfo {
+ValueInfo: cover from GIValueInfo* extends BaseInfo {
     getValue: extern(g_value_info_get_value) func -> Int64
 }
