@@ -1,4 +1,4 @@
 use gi
 import gi/CallableInfo
 
-CallbackInfo: class extends CallableInfo {}
+CallbackInfo: cover from GICallableInfo* extends CallableInfo {}
